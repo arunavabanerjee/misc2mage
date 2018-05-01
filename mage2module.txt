@@ -1,0 +1,17 @@
+//------- building modules
+Magento recommends that you disable caching while setting up the component file structure 
+and adding configuration files.
+The following details the component building process:
+a.Create composer.json
+b.Define your configuration files
+c.Create your component file structure
+d.Register your component
+e.URN schema validation
+f.Name your component
+g.Component load order
+h.Enable your component
+
+
+
+
+
