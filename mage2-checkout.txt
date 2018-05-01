@@ -1,0 +1,17 @@
+
+//-------a new checkout step ----
+Mage2checkout consists of 2 steps: a. Shipping Info b. Review and Payment Info
+A custom checkout step can be added but it will need to be added as ta uicomponent.
+the steps: a.create the viewpart of component, b.implement a checkout step c.add to checkout flow. 
+-----
+create a viewpart of the checkout step component
+a.module directory
+b.create js file implementing view model
+c.create html template for component
+-----
+
+
+
+
+
+
