@@ -1,0 +1,49 @@
+
+
+{{block class="Magento\Framework\View\Element\Template" template="Vendor_Module::myfiles/myfile.phtml"}}
+{{block class="Magento\Framework\View\Element\Template" template="Vendor_Module::myfiles/myfile.phtml"}}
+
+{{block class="Magento\CatalogSearch\Block\Advanced\Form" name="block_name" template="Magento_CatalogSearch::advanced/form.phtml"}}
+
+//-------------------------------------------------------------------------
+//-- cart items in phtml
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
+ 
+// get quote items collection
+$itemsCollection = $cart->getQuote()->getItemsCollection();
+ 
+// get array of all items what can be display directly
+$itemsVisible = $cart->getQuote()->getAllVisibleItems();
+ 
+// get quote items array
+$items = $cart->getQuote()->getAllItems();
+ 
+foreach($items as $item) {
+    echo 'ID: '.$item->getProductId().'<br />';
+    echo 'Name: '.$item->getName().'<br />';
+    echo 'Sku: '.$item->getSku().'<br />';
+    echo 'Quantity: '.$item->getQty().'<br />';
+    echo 'Price: '.$item->getPrice().'<br />';
+    echo "<br />";            
+}
+
+//--- item quantity
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
+ 
+$totalItems = $cart->getQuote()->getItemsCount();
+$totalQuantity = $cart->getQuote()->getItemsQty();
+
+
+//--- billing address
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
+ 
+$billingAddress = $cart->getQuote()->getBillingAddress();
+echo '<pre>'; print_r($billingAddress->getData()); echo '</pre>';
+ 
+$shippingAddress = $cart->getQuote()->getShippingAddress();
+echo '<pre>'; print_r($shippingAddress->getData()); echo '</pre>';
+
+
