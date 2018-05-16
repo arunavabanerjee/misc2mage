@@ -10,6 +10,25 @@ b.create js file implementing view model
 c.create html template for component
 -----
 
+//------------------------------------
+// checkout components
+// https://inviqa.com/blog/technical-guide-magento-2-checkout
+//------------------------------------
+The checkout in Magento 2 is built up from a series of Knockout JS components which are then rendered using 
+the Knockout JS templating system. Magneto 2 defines each one of these components and their parent / child 
+relationship in a large XML file which can be extended or overridden in your own theme or module.
+Magento 2 parses the XML file and runs it through the layout processor which processes each XML node and reads 
+its configuration, which it then inserts into a large multi-dimensional associative array,where each key 
+represents a component or a group of components within.
+This Array is then converted into a JSON object which is then passed into the main app checkout component 
+(Magento_Ui/js/core/app) on the main checkout template file (onepage.phtml) and initialised.
+
+------------------------------------------
+
+1. Add javascript file implementing the new step
+
+
+
 
 
 
