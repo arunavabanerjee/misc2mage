@@ -1,0 +1,12 @@
+
+
+//-procedurea:
+//Module/view/frontend/templates/onepage.phtml
+//cms block in a javascript variable.
+<?php $myCmsBlock = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('checkout_sidebar_block_1')->toHtml() ?>
+<script type="text/javascript">
+    var my_cms_block = <?php echo json_encode($myCmsBlock)?>;
+</script>
+
+
+
