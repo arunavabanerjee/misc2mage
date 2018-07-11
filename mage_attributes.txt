@@ -1,0 +1,27 @@
+
+//attribute types in magento 2
+array
+  0 =>
+      'value' => 'text'
+      'label' => 'Text Field'
+  1 =>
+      'value' => 'textarea'
+      'label' => 'Text Area'
+  2 =>
+      'value' => 'date'
+      'label' => 'Date'
+  3 =>
+      'value' => 'boolean'
+      'label' => 'Yes/No'
+  4 =>
+      'value' => 'multiselect'
+      'label' => 'Multiple Select'
+  5 =>
+      'value' => 'select'
+      'label' => 'Dropdown'
+  6 =>
+      'value' => 'price'
+      'label' => 'Price'
+  7 =>
+      'value' => 'media_image'
+      'label' => 'Media Image'
