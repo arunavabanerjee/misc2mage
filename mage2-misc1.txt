@@ -8,7 +8,12 @@
  $storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
  $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
 --------
-
+installation of modules
+------------------------
+php enable MG2Override_Checkout 
+rm -rf var/cache/*
+rm -rf var/page_cache/*
+php bin/magento setup:upgrade 
 
 
 
