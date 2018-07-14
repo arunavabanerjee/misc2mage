@@ -14,6 +14,18 @@ php enable MG2Override_Checkout
 rm -rf var/cache/*
 rm -rf var/page_cache/*
 php bin/magento setup:upgrade 
+-------------------------------------------------------------------------
+rm -rf pub/static/* var/generation/* var/view_preprocessed/* var/di/*
+php bin/magento cache:flush (chmod -R 777 pub var)
+php bin/magento setup:db:status -- checks whether need to run setup upgrade
+php bin/magento setup:upgrade (chmod -R 777 pub var)
+php bin/magento setup:di:compile (chmod -R 777 pub var)
+php bin/magento setup:static-content:deploy (chmod -R 777 pub var)
+
+
+
+
+
 
 
 
