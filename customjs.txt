@@ -1,0 +1,84 @@
+//--
+// Magento_Theme/layout/default_head_blocks.xml
+//--
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!--
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+	-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+	<css src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" src_type="url" />
+        <css src="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700|Open+Sans:300,400,600,700,800" src_type="url" /> 
+        <css src="https://use.fontawesome.com/releases/v5.3.1/css/all.css" src_type="url" />
+
+	<!-- css files -->
+        <css src="css/animations.min.css" />
+        <!-- Owl Stylesheets -->
+	<!--<css src="css/owl.carousel.css" />
+	<css src="css/owl.theme.default.css" />-->
+        <css src="css/custom.css" />
+        <css src="css/responsive.css" />
+
+	<!-- scripts -->
+	<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" src_type="url" ></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" src_type="url"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" src_type="url"></script>
+         <script> FontAwesomeConfig = { searchPseudoElements: true }; </script>
+        <script type="text/javascript" src="js/animations.min.js"></script>
+        <!--<script src="js/owl.carousel.js"></script>-->        
+        <script src="js/main.js"></script>
+
+    </head>
+</page>
+
+//--
+// file in theme/web/js 
+//--
+/**
+ * custom scripts 
+ */
+require(["jquery"], function($) {
+  // Here your custom code...
+  console.log('Hello');
+
+  $(document).ready(function(){ 
+
+	alert('hello');
+
+  });
+  
+});
+
+//--
+//theme/requirejs-config.js
+//--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+var config = {
+    //When load 'requirejs' always load the following files
+    deps: [
+    	"js/main"
+    ], 	
+    map: {
+        "*": {
+            "animations.min":  "js/animations.min",
+        }
+    },
+    shim: {
+        "animations.min": { 
+		      deps: ['jquery'],
+     	  },
+    },
+};
+
